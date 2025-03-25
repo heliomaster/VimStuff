@@ -100,6 +100,10 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 let &t_SI = "\e[5 q"
 let &t_EI = "\e[1 q"
 
+" Force saving files that require root permission 
+cnoremap w!! w !sudo tee % > /dev/null
+
+
 "PLUGS.
 
 call plug#begin('~/.vim/plugged')
